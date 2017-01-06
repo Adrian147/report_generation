@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        
+        <title>Draft Transcript</title>
+        
+        <link href="stylesheet.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div class = "page">
+            <h2 class="header"><span>Indian Institute of Technology Palakkad</span> <br/>Ahalia Integrated Campus <br/> Kozhipara 678557 Palakkad</h2>
+        
+            <h3 class="bold">Draft Academic Transcript</h3>
+            <p><span class="label">Name :</span> {{name}}</p>
+            <p><span class="label">Roll No. :</span> {{roll_no}}</p>
+            <p><span class="label">Branch :</span> {{branch}}</p>
+            <p><span class="label">Semester :</span> {{semester}}</p>
+        
+            <table class="marks">
+            <tr>
+                <th>Sl. No.</th>
+                <th>Course Code</th>
+                <th>Course Title</th>
+                <th>Category</th>
+                <th>Course Credit</th>
+                <th>Grade</th>
+                <th>Attendance</th>
+            </tr>
+            {% set count = 1 %}
+            {% for row in marks %}
+            <tr>
+                <td>{{count}}</td>
+                <td>{{row["Course Code"]}}</td>
+                <td class="left_align">{{row["Course Title"]}}</td>
+                <td>{{row["Category"]}}</td>
+                <td>{{row["Course Credit"]}}</td>
+                <td>{{row["Grade"]}}</td>
+                <td>{{row["Attendance"]}}</td>
+                {% set count = count + 1 %}
+            </tr>
+            {% endfor %}
+        </table>
+        
+            <p><span class="label">Total credits earned:</span> {{credit}}</p>
+            <p><span class="label">GPA:</span>{{gpa}}</p>
+            <p><span class="label">CGPA:</span>{{cgpa}}</p>
+        </div>
+        <div class="page_end">
+            <p class="incharge"><br/>Prof In charge (Academics)</p>
+            <p>&nbsp;</p>
+             <p class="date"><span class="label">Date Issued:</span> {{date}}</p>
+            <hr> 
+        
+            <table class="legend">
+                <tr>
+                    <td class="legend_element">
+                        <p class="label">Grade Scale</p>
+                        <table>
+            <tr>
+                <th>Grade</th>
+                <th>Grade Points</th>
+                <th>Remarks</th>
+            </tr>
+            <tr>
+                <td>S</td>
+                <td>10</td>
+                <td>---</td>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td>9</td>
+                <td>---</td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td>8</td>
+                <td>---</td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td>7</td>
+                <td>---</td>
+            </tr>
+            <tr>
+                <td>D</td>
+                <td>6</td>
+                <td>---</td>
+            </tr>
+            <tr>
+                <td>E</td>
+                <td>4</td>
+                <td>---</td>
+            </tr>
+            <tr>
+                <td>U</td>
+                <td>0</td>
+                <td class="left_align">Fail</td>
+            </tr>
+            <tr>
+                <td>W</td>
+                <td>0</td>
+                <td class="left_align">Mandatory repeat of the course due to insufficient attendance</td>
+            </tr>
+            <tr>
+                <td>I</td>
+                <td>0</td>
+                <td class="left_align">Incomplete / withheld, to be resolved</td>
+            </tr>
+            <tr>
+                <td>X</td>
+                <td>-</td>
+                <td class="left_align">Completed successfully</td>
+            </tr>
+            <tr>
+                <td>Y</td>
+                <td>-</td>
+                <td class="left_align">Incomplete</td>
+            </tr>
+            <tr>
+                <td>P</td>
+                <td>0</td>
+                <td class="left_align">Completed successfully and credits not included in calculation of GPA/CGPA. Courses with category HPF, PPF, and PIL carry credit but are not
+  assigned grade points and also are not included in calculation of CGPA</td>
+            </tr>
+        </table>
+        
+                    </td>
+                    <td class="legend_element">
+                        <p class="label">Attendance Scale</p>
+                        <table>
+            <tr>
+                <th>Code</th>
+                <th>Remarks</th>
+                <th>Attendance Rounded to </th>
+            </tr>
+            <tr>
+                <td>VG</td>
+                <td>Very Good</td>
+                <td>&ge; 95%</td>
+            </tr>
+            <tr>
+                <td>G</td>
+                <td>Good</td>
+                <td>85 to 94%</td>
+            </tr>
+            <tr>
+                <td>P</td>
+                <td>Poor</td>
+                <td>&lt; 85%</td>
+            </tr>
+        </table>
+                    </td>
+                </tr>
+            </table>
+            <p>* The grade for ID 1200, Ecology &amp; Environment will be finalized after the semester examinations in Aug.2016</p>
+        </div>
+    </body>
+</html>
